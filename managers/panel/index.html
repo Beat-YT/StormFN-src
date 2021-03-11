@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Storm's dashboard</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		<link rel="icon" href="favicon.ico"/>
+		<!-- Font Awesome -->
+		<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		rel="stylesheet"
+		/>
+		<!-- Google Fonts -->
+		<link
+		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+		rel="stylesheet"
+		/>
+		<!-- MDB -->
+		<link
+		href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
+		rel="stylesheet"
+		/>
+	</head>
+	<body onload=redirect()>
+		<h1 class="titel">Dashboard</h5>
+		<h5 class="error" id="error1"></h6>
+        <h6 class="error" id="error2"></h6>
+        <br>
+		<div class="change">
+			<form>
+                <div class="form-outline mb-4">
+					<span>VBucks</span>
+					<input class="form1Example" id="vbx" placeholder="Amount" type="number" min="-2147483648" max="2147483647">
+                </div>
+				<button class="btn btn-primary btn-block" onclick="httpGet('vbx', vbx.value)">Save</button>
+				<br>
+				<div class="form-outline mb-4">
+					<span>Level</span>
+					<input class="form1Example1" id="level" placeholder="Amount" type="number" min="0" max="9999">	
+                </div>
+				<button class="btn btn-primary btn-block" onclick="httpGet('level', level.value)">Save</button>
+            </form>
+		</div>
+		<script type="text/javascript">
+            function url() {
+                const url = window.location.href;
+                const arr = url.split("/");
+                const result = arr[0] + "//" + arr[2];
+                window.location = `${result}/panel?user=/`;
+                return false;
+            }
+        </script>
+		<script>
+			$(function () {
+				$("#vbx").keyup(function () {
+					var max = parseInt($(this).attr('max'));
+					var min = parseInt($(this).attr('min'));
+					if ($(this).val() > max) {
+						$(this).val(max);
+					} else if ($(this).val() < min) {
+						$(this).val(min);
+					}
+				});
+			});
+
+			$(function () {
+			$("#level").keyup(function () {
+					var max = parseInt($(this).attr('max'));
+					var min = parseInt($(this).attr('min'));
+					if ($(this).val() > max) {
+						$(this).val(max);
+					} else if ($(this).val() < min) {
+						$(this).val(min);
+					}
+				});
+			});
+
+			function httpGet(command, value) {
+				var xmlHttp = new XMLHttpRequest();
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				const user = urlParams.get('user')
+				xmlHttp.open("GET", `/api?user=${user}&command=${command}&value=${value}`,
+					false); // false for synchronous request
+				xmlHttp.send(null);
+				return alert(xmlHttp.responseText)
+			}
+		</script>
+    <script
+			type="text/javascript"
+      src="enable-site.js"
+    </script>
+		<!-- MDB -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js">
+    </script>
+	</body>
+</html>
