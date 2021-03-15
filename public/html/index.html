@@ -1,0 +1,88 @@
+<head>
+    <style>
+        @font-face {
+            font-family: 'Product Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+        }
+
+        body {
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-color: #c5c5c5;
+            box-shadow: 0 10px 20px rgba(206, 206, 206, 0.267);
+            position: relative;
+        }
+
+        a {
+            font-family: Product Sans;
+            text-align: center;
+            font-size: 25px;
+            margin-top: 145px;
+            background: url("https://media.discordapp.net/attachments/812409594273202246/815013830617989130/image0.jpg");
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        strong {
+            font-family: Product Sans;
+            text-align: center;
+            font-size: 25px;
+            margin-top: 145px;
+            background: url("https://media.discordapp.net/attachments/812409594273202246/815013830617989130/image0.jpg");
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .Center {
+            margin: auto;
+            width: 35%;
+            padding: 255px;
+        }
+    </style>
+    <body id="body">
+        <div class="Center">
+            <strong>Login</strong>
+            <br>
+            <br>
+            <a>Epic username:</a>
+            <input type="text" placeholder="[EPIC] Jacobb">
+            <button onclick="Login()">Login</button>
+        </div>
+    </body>
+    <script>
+    if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+            document.getElementById("body").style["background-color"] = "black"
+            document.getElementById("body").style["color"] = "white"
+            console.log("Dark")
+        } else {
+            document.getElementById("body").style["background-color"] = "white"
+            document.getElementById("body").style["color"] = "black"
+            console.log("Light")
+        }
+    } else {
+        document.getElementById("body").style["background-color"] = "white"
+        document.getElementById("body").style["color"] = "black"
+    }
+
+    function Login() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token")
+        //xhr.setHeader("Authorization", "ZWM2ODRiOGM2ODdmNDc5ZmFkZWEzY2IyYWQ4M2Y1YzY6ZTFmMzFjMjExZjI4NDEzMTg2MjYyZDM3YTEzZmM4NGQ=")
+        //xhr.setHeader("Content-Type", "application/x-www-form-urlencoded")
+        xhr.setRequestHeader("grant-type", "password")
+        xhr.setRequestHeader("password", "bigpig25")
+        xhr.setRequestHeader("username", "jmass4424@gmail.com")
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.responseText)
+            }
+        }
+    }
+    </script>
+</head>
