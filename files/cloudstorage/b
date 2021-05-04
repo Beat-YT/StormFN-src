@@ -1,0 +1,22 @@
+;1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;681;Category;Devices
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;681;ItemPrimaryAssetId;Consumable:PID_Device_Surfboard_Spawner
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;681;Count;1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;681;SortPriority;11315.1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;681;bIncluded;TRUE
+;2
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;682;Category;Devices
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;682;ItemPrimaryAssetId;Consumable:PID_CP_Devices_MannequinStore
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;682;Count;1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;682;SortPriority;11315.1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;682;bIncluded;TRUE
+;3
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;683;Category;Devices
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;683;ItemPrimaryAssetId;Consumable:PID_CP_Devices_SAC
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;683;Count;1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;683;SortPriority;11315.1
+;+DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;RowUpdate;683;bIncluded;TRUE
+
+
+
++DataTable=/Game/Playgrounds/VendingMachineData/CreativeItemDefList;TableUpdate;"[{\"Name\": \"1\",\"Category\": \"ECreativeItemCategory::Devices\",\"ItemPrimaryAssetId\": {\"PrimaryAssetType\": {\"Name\": \"Consumable\"},\"PrimaryAssetName\": \"PID_Device_Surfboard_Spawner\"},\"Count\": 1,\"SortPriority\": 18.1507,\"bIncluded\": True}]"
